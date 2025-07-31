@@ -1,0 +1,59 @@
+# Real-Time Retail BI Solution
+
+This project demonstrates a real-time business intelligence pipeline using SQL Server, SSIS, and Power BI. The use case focuses on a retail client needing hourly sales visibility across 50+ stores.
+
+## 🏗️ Tech Stack
+- SQL Server 2019
+- SSIS (SQL Server Integration Services)
+- Power BI
+- SQL Agent (for scheduling)
+
+---
+
+## 🧱 1. SSIS Packages (`/SSIS_ETL`)
+Automated ETL pipelines that:
+- Read sales files from a folder
+- Clean and transform the data
+- Load to SQL Server `FactSales` and `DimStore`
+
+Use SQL Agent for scheduling every 15 minutes.
+
+---
+
+## 🗃️ 2. SQL Scripts (`/SQL_Scripts`)
+- `create_tables.sql`: Creates fact/dimension schema
+- `sp_refresh_sales_data.sql`: Refresh logic for summary data
+- `populate_dimensions.sql`: Inserts store/product metadata
+
+---
+
+## 📊 3. Power BI Report (`/PowerBI_Report`)
+`RealTime_Sales_Dashboard.pbix` includes:
+- KPIs: Total Sales, Basket Size, Margin
+- Drill-through views by store and product
+- Conditional formatting for low-performing stores
+
+---
+
+## 📂 4. Sample Data (`/Sample_Data`)
+Use these for demo/testing:
+- `sales_data_sample.csv`
+- `store_data_sample.csv`
+
+---
+
+## 📌 Architecture
+
+![architecture_diagram.png](./architecture_diagram.png)
+
+---
+
+## 👨‍💻 Author
+**Akhila Yadav Akkaldev**  
+BI Developer | SQL & Power BI Specialist  
+[LinkedIn](https://www.linkedin.com/in/akhila-yadav-akkaldev-084852361) | [Medium](https://medium.com/@aakkaldev) | [Portfolio](https://github.com/Akhila-77a)
+
+---
+
+## 📄 License
+MIT License
